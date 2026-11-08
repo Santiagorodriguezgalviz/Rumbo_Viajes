@@ -2,7 +2,7 @@
 
 import { usePreferencias } from '@/components/site/PreferenciasProvider';
 import { WhatsAppButton } from '@/components/site/WhatsAppButton';
-import { whatsappGeneralUrl } from '@/lib/whatsapp';
+import { TELEFONO_VISIBLE, whatsappGeneralUrl } from '@/lib/whatsapp';
 
 export function FinalCta() {
   const { locale, tx } = usePreferencias();
@@ -39,6 +39,18 @@ export function FinalCta() {
               {tx({ es: 'Ver destinos', en: 'See destinations' })}
             </a>
           </div>
+          <a
+            href={whatsappGeneralUrl(locale)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-3 text-lg font-semibold text-sun-300 transition-colors hover:text-white"
+          >
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-whatsapp opacity-75 motion-safe:animate-ping" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-whatsapp" />
+            </span>
+            {TELEFONO_VISIBLE}
+          </a>
         </div>
       </div>
     </section>

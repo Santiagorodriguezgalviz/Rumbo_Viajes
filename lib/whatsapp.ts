@@ -3,10 +3,14 @@ import { formatDuracion } from '@/lib/format';
 import type { Locale } from '@/lib/preferencias';
 import { SITE } from '@/lib/site';
 
-const NUMERO = process.env.NEXT_PUBLIC_WHATSAPP;
+/** WhatsApp de la agencia, con indicativo de Colombia. */
+export const WHATSAPP_NUMERO = '573053873453';
+
+/** Cómo se muestra el número para llamar o escribir. */
+export const TELEFONO_VISIBLE = '305 387 3453';
 
 export function buildWhatsAppUrl(mensaje?: string) {
-  const base = `https://wa.me/${NUMERO}`;
+  const base = `https://wa.me/${WHATSAPP_NUMERO}`;
   return mensaje ? `${base}?text=${encodeURIComponent(mensaje)}` : base;
 }
 

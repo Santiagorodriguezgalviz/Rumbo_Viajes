@@ -11,7 +11,7 @@ export const HERO_IMAGEN: Foto = {
 };
 
 export const FOTO_PAREJA: Foto = {
-  src: 'https://images.pexels.com/photos/7446962/pexels-photo-7446962.jpeg',
+  src: '/fotos/pareja.jpg',
   alt: {
     es: 'Pareja sonriente con maletas en un aeropuerto, lista para viajar',
     en: 'Smiling couple with suitcases in an airport, ready to travel',

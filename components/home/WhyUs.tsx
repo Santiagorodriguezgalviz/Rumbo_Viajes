@@ -15,7 +15,11 @@ export function WhyUs() {
     <section className="relative overflow-hidden py-20 sm:py-28">
       <div className="mx-auto grid max-w-6xl items-center gap-16 px-4 sm:px-6 lg:grid-cols-2">
         <div className="relative">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem]">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -inset-5 -z-10 rounded-[2.6rem] bg-[conic-gradient(from_140deg,transparent,rgb(var(--teal-400)/0.65),transparent,rgb(var(--sun-400)/0.7),transparent)] opacity-80 blur-2xl motion-safe:animate-glow-pulse"
+          />
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl shadow-brand-dark/25 ring-1 ring-white/15">
             <Image
               src={FOTO_PAREJA.src}
               alt={tx(FOTO_PAREJA.alt)}
@@ -23,10 +27,15 @@ export function WhyUs() {
               sizes="(min-width: 1024px) 45vw, 100vw"
               placeholder="blur"
               blurDataURL={BLUR_PLACEHOLDER}
-              className="object-cover"
+              className="object-cover motion-safe:animate-ken-burns-loop"
             />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/30 to-transparent motion-safe:animate-sheen"
+            />
+            <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-brand-dark/50 to-transparent" />
           </div>
-          <div className="absolute -bottom-6 left-4 right-4 flex items-center gap-4 rounded-2xl bg-surface p-5 shadow-xl shadow-brand-dark/10 sm:left-auto sm:right-8 sm:w-80">
+          <div className="absolute -bottom-6 left-4 right-4 flex items-center gap-4 rounded-2xl bg-surface/95 p-5 shadow-xl shadow-brand-dark/20 ring-1 ring-white/10 backdrop-blur-md motion-safe:animate-soft-float sm:left-auto sm:right-8 sm:w-80">
             <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-sun-100 text-navy-900">
               <ShieldCheck className="h-6 w-6" aria-hidden="true" />
             </span>

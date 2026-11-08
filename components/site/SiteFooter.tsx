@@ -6,7 +6,7 @@ import { usePreferencias } from '@/components/site/PreferenciasProvider';
 import { FOTO_PAREJA, HERO_IMAGEN } from '@/data/contenido';
 import { PAQUETES } from '@/data/paquetes';
 import { SITE } from '@/lib/site';
-import { whatsappGeneralUrl } from '@/lib/whatsapp';
+import { TELEFONO_VISIBLE, WHATSAPP_NUMERO, whatsappGeneralUrl } from '@/lib/whatsapp';
 
 export function SiteFooter() {
   const { locale, tx } = usePreferencias();
@@ -56,9 +56,15 @@ export function SiteFooter() {
             href={whatsappGeneralUrl(locale)}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-5 inline-block text-sm transition-colors hover:text-sun-300"
+            className="mt-5 block font-display text-2xl font-semibold tracking-tight text-white transition-colors hover:text-sun-300"
           >
-            {tx({ es: 'Escríbenos por WhatsApp', en: 'Message us on WhatsApp' })}
+            {TELEFONO_VISIBLE}
+          </a>
+          <a
+            href={`tel:+${WHATSAPP_NUMERO}`}
+            className="mt-2 inline-block text-sm transition-colors hover:text-sun-300"
+          >
+            {tx({ es: 'Escríbenos o llámanos por WhatsApp', en: 'Message or call us on WhatsApp' })}
           </a>
           <p className="mt-3 text-sm text-white/75">
             {SITE.city}, {SITE.country}
