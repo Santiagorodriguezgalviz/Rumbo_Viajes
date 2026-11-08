@@ -45,7 +45,7 @@ export type Paquete = {
 
 function foto(id: number, alt: Bilingue, fotografo: string): Foto {
   return {
-    src: `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg`,
+    src: `/fotos/destinos/${id}.jpg`,
     alt,
     fotografo,
   };

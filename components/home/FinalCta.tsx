@@ -45,11 +45,15 @@ export function FinalCta() {
             rel="noopener noreferrer"
             className="mt-6 inline-flex items-center gap-3 text-lg font-semibold text-sun-300 transition-colors hover:text-white"
           >
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-whatsapp opacity-75 motion-safe:animate-ping" />
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-whatsapp" />
-            </span>
-            {TELEFONO_VISIBLE}
+            <span>+57</span>
+            <img
+              src="/flags/co.svg"
+              alt=""
+              width={32}
+              height={22}
+              className="h-5 w-8 rounded-[3px] object-cover shadow-sm ring-1 ring-white/40"
+            />
+            <span>{TELEFONO_VISIBLE}</span>
           </a>
         </div>
       </div>

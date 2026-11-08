@@ -22,7 +22,7 @@ export function SiteFooter() {
 
   return (
     <footer className="bg-brand-dark text-white/80">
-      <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-12">
+      <div className="mx-auto grid max-w-6xl gap-12 px-4 pb-24 pt-16 sm:px-6 md:grid-cols-12 md:pb-16">
         <div className="md:col-span-5">
           <Logo tone="light" />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/75">

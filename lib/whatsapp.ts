@@ -1,6 +1,4 @@
-import type { Bilingue } from '@/lib/preferencias';
-import { formatDuracion } from '@/lib/format';
-import type { Locale } from '@/lib/preferencias';
+import type { Bilingue, Locale } from '@/lib/preferencias';
 import { SITE } from '@/lib/site';
 
 /** WhatsApp de la agencia, con indicativo de Colombia. */
@@ -19,11 +17,16 @@ export function whatsappPaqueteUrl(
   locale: Locale,
 ) {
   const nombre = paquete.nombre[locale];
-  const duracion = formatDuracion(paquete.duracion, locale);
   const mensaje =
     locale === 'en'
-      ? `Hi ${SITE.name}, I'd like the ${nombre} package (${duracion}). Could you send me a proposal?`
-      : `Hola ${SITE.name}, quiero el paquete a ${nombre} (${duracion}). ¿Me envían mi propuesta?`;
+      ? `Hi, I'm interested in this ${nombre} package.`
+      : `Hola, estoy interesado en este paquete a ${nombre}.`;
+  return buildWhatsAppUrl(mensaje);
+}
+
+export function whatsappOtroUrl(locale: Locale) {
+  const mensaje =
+    locale === 'en' ? `Hi, I'm interested in another package.` : `Hola, estoy interesado en otro paquete.`;
   return buildWhatsAppUrl(mensaje);
 }
 

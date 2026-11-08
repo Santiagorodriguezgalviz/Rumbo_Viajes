@@ -19,7 +19,7 @@ export function WhyUs() {
             aria-hidden="true"
             className="pointer-events-none absolute -inset-5 -z-10 rounded-[2.6rem] bg-[conic-gradient(from_140deg,transparent,rgb(var(--teal-400)/0.65),transparent,rgb(var(--sun-400)/0.7),transparent)] opacity-80 blur-2xl motion-safe:animate-glow-pulse"
           />
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl shadow-brand-dark/25 ring-1 ring-white/15">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-2xl shadow-brand-dark/25 ring-1 ring-white/15 sm:aspect-[4/5]">
             <Image
               src={FOTO_PAREJA.src}
               alt={tx(FOTO_PAREJA.alt)}
@@ -27,7 +27,7 @@ export function WhyUs() {
               sizes="(min-width: 1024px) 45vw, 100vw"
               placeholder="blur"
               blurDataURL={BLUR_PLACEHOLDER}
-              className="object-cover motion-safe:animate-ken-burns-loop"
+              className="object-cover object-[center_18%] motion-safe:animate-ken-burns-loop"
             />
             <div
               aria-hidden="true"
@@ -35,7 +35,7 @@ export function WhyUs() {
             />
             <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-brand-dark/50 to-transparent" />
           </div>
-          <div className="absolute -bottom-6 left-4 right-4 flex items-center gap-4 rounded-2xl bg-surface/95 p-5 shadow-xl shadow-brand-dark/20 ring-1 ring-white/10 backdrop-blur-md motion-safe:animate-soft-float sm:left-auto sm:right-8 sm:w-80">
+          <div className="absolute bottom-3 left-3 right-16 flex items-center gap-3 rounded-2xl bg-surface/95 p-3 shadow-xl shadow-brand-dark/20 ring-1 ring-white/10 backdrop-blur-md motion-safe:animate-soft-float sm:bottom-6 sm:left-auto sm:right-8 sm:w-80 sm:gap-4 sm:p-5">
             <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-sun-100 text-navy-900">
               <ShieldCheck className="h-6 w-6" aria-hidden="true" />
             </span>

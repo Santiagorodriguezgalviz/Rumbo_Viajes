@@ -131,8 +131,15 @@
   min-width: 100vw;
   flex-shrink: 0;
   align-items: center;
-  gap: 2.75rem;
-  padding-inline: 1.5rem;
+  gap: 1.75rem;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .marquee-group {
+    gap: 2.75rem;
+    padding-inline: 1.5rem;
+  }
 }
 
 @keyframes marquee-slide {

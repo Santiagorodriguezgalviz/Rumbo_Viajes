@@ -3,8 +3,9 @@
 import { usePreferencias } from '@/components/site/PreferenciasProvider';
 import { LOCALES, TEMAS } from '@/lib/preferencias';
 
-export function PreferenciasSelector() {
+export function PreferenciasSelector({ size = 'sm' }: { size?: 'sm' | 'md' }) {
   const { locale, setLocale, tema, setTema, tx } = usePreferencias();
+  const boton = size === 'md' ? 'min-h-11 px-4 text-sm' : 'px-2.5 py-1 text-xs';
 
   return (
     <div className="flex items-center gap-2">
@@ -21,7 +22,7 @@ export function PreferenciasSelector() {
               type="button"
               aria-pressed={activo}
               onClick={() => setLocale(opcion.codigo)}
-              className={`rounded-full px-2.5 py-1 text-xs font-semibold transition-colors duration-200 ${
+              className={`rounded-full font-semibold transition-colors duration-200 ${boton} ${
                 activo ? 'bg-brand-dark text-white' : 'text-ink-muted hover:text-ink'
               }`}
             >
@@ -44,7 +45,7 @@ export function PreferenciasSelector() {
               type="button"
               aria-pressed={activo}
               onClick={() => setTema(opcion.codigo)}
-              className={`rounded-full px-2.5 py-1 text-xs font-semibold transition-colors duration-200 ${
+              className={`rounded-full font-semibold transition-colors duration-200 ${boton} ${
                 activo ? 'bg-brand-dark text-white' : 'text-ink-muted hover:text-ink'
               }`}
             >

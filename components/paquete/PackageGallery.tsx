@@ -9,12 +9,14 @@ export function PackageGallery({ imagen, galeria, nombre }: { imagen: Foto; gale
   const { tx } = usePreferencias();
   const fotos = [imagen, ...galeria];
   return (
-    <div className="grid grid-cols-2 gap-3 md:h-[480px] md:grid-cols-4 md:grid-rows-2 md:gap-4">
+    <div className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-1 [scrollbar-width:none] md:mx-0 md:grid md:h-[480px] md:grid-cols-4 md:grid-rows-2 md:gap-4 md:overflow-visible md:px-0 md:pb-0 [&::-webkit-scrollbar]:hidden">
       {fotos.map((foto, index) => (
         <figure
           key={foto.src}
-          className={`group relative overflow-hidden rounded-2xl bg-line ${
-            index === 0 ? 'col-span-2 aspect-[16/10] md:col-span-2 md:row-span-2 md:aspect-auto md:rounded-3xl' : 'aspect-[4/3] md:aspect-auto'
+          className={`group relative shrink-0 snap-center overflow-hidden rounded-2xl bg-line ${
+            index === 0
+              ? 'aspect-[16/10] w-[86%] md:col-span-2 md:row-span-2 md:aspect-auto md:w-auto md:rounded-3xl'
+              : 'aspect-[4/3] w-[68%] md:aspect-auto md:w-auto'
           }`}
         >
           <Image

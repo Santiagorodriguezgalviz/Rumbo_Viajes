@@ -2,7 +2,7 @@ import type { Faq, Foto } from '@/data/paquetes';
 import type { Bilingue } from '@/lib/preferencias';
 
 export const HERO_IMAGEN: Foto = {
-  src: 'https://images.pexels.com/photos/14681748/pexels-photo-14681748.jpeg',
+  src: '/fotos/destinos/14681748.jpg',
   alt: {
     es: 'Torre Eiffel iluminada al atardecer sobre París',
     en: 'Eiffel Tower lit up at sunset over Paris',

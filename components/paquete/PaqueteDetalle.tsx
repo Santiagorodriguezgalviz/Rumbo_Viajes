@@ -54,7 +54,7 @@ export function PaqueteDetalle({ paquete }: { paquete: Paquete }) {
           <p className="inline-flex rounded-full bg-teal-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-teal-800">
             {REGION_TEXTO[paquete.region][locale]}
           </p>
-          <h1 className="mt-4 font-display text-4xl font-semibold leading-[1.15] tracking-tight text-ink sm:text-5xl">
+          <h1 className="mt-4 font-display text-3xl font-semibold leading-[1.15] tracking-tight text-ink sm:text-5xl">
             {tx({ es: `Paquete a ${nombre}`, en: `Package to ${nombre}` })}
           </h1>
           <p className="mt-4 text-lg leading-relaxed text-ink-muted">{tx(paquete.resumen)}</p>
@@ -68,8 +68,8 @@ export function PaqueteDetalle({ paquete }: { paquete: Paquete }) {
         <PackageGallery imagen={paquete.imagen} galeria={paquete.galeria} nombre={nombre} />
       </div>
 
-      <div className="mt-16 grid gap-12 lg:grid-cols-[1fr_360px] lg:gap-16">
-        <div className="space-y-20">
+      <div className="mt-10 grid gap-12 lg:mt-16 lg:grid-cols-[1fr_360px] lg:gap-16">
+        <div className="order-2 space-y-16 lg:order-1 lg:space-y-20">
           <section aria-labelledby="sobre-el-viaje">
             <h2 id="sobre-el-viaje" className="font-display text-3xl font-semibold tracking-tight text-ink">
               {tx({ es: 'Sobre este viaje', en: 'About this trip' })}
@@ -117,12 +117,12 @@ export function PaqueteDetalle({ paquete }: { paquete: Paquete }) {
           </section>
         </div>
 
-        <div>
+        <div className="order-1 lg:order-2">
           <BookingCard paquete={paquete} />
         </div>
       </div>
 
-      <section className="mt-24 rounded-[2rem] bg-brand-dark px-8 py-14 text-white sm:px-14">
+      <section className="mt-16 rounded-[2rem] bg-brand-dark px-5 py-10 text-white sm:mt-24 sm:px-14 sm:py-14">
         <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
           <div className="max-w-xl">
             <h2 className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
