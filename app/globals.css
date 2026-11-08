@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy-50: 241 245 250;
+  --navy-100: 220 230 241;
+  --navy-200: 185 203 224;
+  --navy-300: 138 170 201;
+  --navy-400: 88 132 174;
+  --navy-500: 47 102 150;
+  --navy-600: 34 80 125;
+  --navy-700: 23 59 99;
+  --navy-800: 15 42 74;
+  --navy-900: 10 26 47;
+
+  --teal-50: 237 251 250;
+  --teal-100: 211 244 242;
+  --teal-200: 168 232 228;
+  --teal-300: 111 214 208;
+  --teal-400: 46 189 184;
+  --teal-500: 18 163 159;
+  --teal-600: 11 127 124;
+  --teal-700: 9 102 99;
+  --teal-800: 7 82 80;
+
+  --sun-50: 255 251 239;
+  --sun-100: 255 243 207;
+  --sun-200: 255 228 158;
+  --sun-300: 255 211 107;
+  --sun-400: 255 197 61;
+  --sun-500: 245 174 27;
+  --sun-600: 217 146 11;
+  --sun-700: 168 111 8;
+
+  --sand-50: 251 248 243;
+  --sand-100: 245 240 231;
+  --sand-200: 234 226 211;
+
+  --background: 40 33% 98%;
+  --foreground: 15 42 74;
+  --card: 0 0% 100%;
+  --card-foreground: 15 42 74;
+  --popover: 0 0% 100%;
+  --popover-foreground: 15 42 74;
+  --primary: 15 42 74;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 40 25% 94%;
+  --secondary-foreground: 15 42 74;
+  --muted: 40 25% 94%;
+  --muted-foreground: 215 25% 35%;
+  --accent: 43 100% 62%;
+  --accent-foreground: 15 42 74;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 11 127 124;
+  --radius: 0.75rem;
+
+  --page: 251 248 243;
+  --surface: 255 255 255;
+  --ink: 15 42 74;
+  --ink-muted: 34 80 125;
+  --line: 220 230 241;
+  --brand-dark: 10 26 47;
+}
+
+[data-tema='oscuro'] {
+  --page: 12 13 16;
+  --surface: 24 26 31;
+  --ink: 238 241 245;
+  --ink-muted: 178 185 196;
+  --line: 48 52 61;
+  --brand-dark: 0 0 0;
+}
+
+[data-tema='azul'] {
+  --page: 232 241 252;
+  --surface: 255 255 255;
+  --ink: 10 26 47;
+  --ink-muted: 34 80 125;
+  --line: 185 203 224;
+  --brand-dark: 23 59 99;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-page text-ink antialiased;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-teal-500 ring-offset-2 ring-offset-page;
+  }
+}
+
+@layer components {
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
