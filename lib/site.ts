@@ -1,6 +1,6 @@
 export const SITE = {
   name: 'Rumbo Viajes',
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
+  url: 'https://viajaconmanuel.vercel.app',
   locale: 'es_CO',
   city: 'Bogotá',
   country: 'Colombia',

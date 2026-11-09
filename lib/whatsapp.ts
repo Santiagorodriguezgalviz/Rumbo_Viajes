@@ -1,5 +1,5 @@
 import type { Bilingue, Locale } from '@/lib/preferencias';
-import { SITE } from '@/lib/site';
+import { absoluteUrl, SITE } from '@/lib/site';
 
 /** WhatsApp de la agencia, con indicativo de Colombia. */
 export const WHATSAPP_NUMERO = '573053873453';
@@ -12,21 +12,21 @@ export function buildWhatsAppUrl(mensaje?: string) {
   return mensaje ? `${base}?text=${encodeURIComponent(mensaje)}` : base;
 }
 
-/** Página del paquete en el sitio que el visitante tiene abierto. */
-export function urlPaginaPaquete(slug: string, origen: string) {
-  return `${origen.replace(/\/$/, '')}/paquetes/${slug}`;
+/** Ficha del paquete en el sitio publicado. */
+export function urlPaginaPaquete(slug: string) {
+  return absoluteUrl(`/paquetes/${slug}`);
 }
 
-export function mensajePaquete(paquete: { nombre: Bilingue; slug: string }, locale: Locale, origen: string) {
+export function mensajePaquete(paquete: { nombre: Bilingue; slug: string }, locale: Locale) {
   const nombre = paquete.nombre[locale];
-  const url = urlPaginaPaquete(paquete.slug, origen);
+  const url = urlPaginaPaquete(paquete.slug);
   return locale === 'en'
     ? `Hi, I'm interested in this ${nombre} package.\n\n${url}`
     : `Hola, estoy interesado en este paquete a ${nombre}.\n\n${url}`;
 }
 
-export function whatsappPaqueteUrl(paquete: { nombre: Bilingue; slug: string }, locale: Locale, origen: string) {
-  return buildWhatsAppUrl(mensajePaquete(paquete, locale, origen));
+export function whatsappPaqueteUrl(paquete: { nombre: Bilingue; slug: string }, locale: Locale) {
+  return buildWhatsAppUrl(mensajePaquete(paquete, locale));
 }
 
 export function whatsappOtroUrl(locale: Locale) {
