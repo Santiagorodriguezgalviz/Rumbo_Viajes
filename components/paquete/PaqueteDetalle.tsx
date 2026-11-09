@@ -4,17 +4,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, ChevronRight } from 'lucide-react';
 import { BookingCard } from '@/components/paquete/BookingCard';
+import { WhatsAppPaqueteButton } from '@/components/paquete/WhatsAppPaqueteButton';
 import { IncludeList } from '@/components/paquete/IncludeList';
 import { Itinerary } from '@/components/paquete/Itinerary';
 import { PackageGallery } from '@/components/paquete/PackageGallery';
 import { FaqList } from '@/components/site/FaqList';
 import { usePreferencias } from '@/components/site/PreferenciasProvider';
 import { SectionHeading } from '@/components/site/SectionHeading';
-import { WhatsAppButton } from '@/components/site/WhatsAppButton';
 import { PAQUETES, REGION_TEXTO, type Paquete } from '@/data/paquetes';
 import { formatDuracion } from '@/lib/format';
 import { BLUR_PLACEHOLDER } from '@/lib/images';
-import { whatsappPaqueteUrl } from '@/lib/whatsapp';
 
 export function PaqueteDetalle({ paquete }: { paquete: Paquete }) {
   const { locale, tx } = usePreferencias();
@@ -135,9 +134,9 @@ export function PaqueteDetalle({ paquete }: { paquete: Paquete }) {
               })}
             </p>
           </div>
-          <WhatsAppButton href={whatsappPaqueteUrl(paquete, locale)}>
+          <WhatsAppPaqueteButton paquete={paquete}>
             {tx({ es: 'Pedir mi propuesta', en: 'Request my proposal' })}
-          </WhatsAppButton>
+          </WhatsAppPaqueteButton>
         </div>
       </section>
 

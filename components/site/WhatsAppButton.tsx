@@ -6,6 +6,7 @@ type Props = {
   variant?: 'whatsapp' | 'light' | 'navy';
   size?: 'sm' | 'lg';
   className?: string;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 };
 
 const variants = {
@@ -25,12 +26,14 @@ export function WhatsAppButton({
   variant = 'whatsapp',
   size = 'lg',
   className = '',
+  onClick,
 }: Props) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={onClick}
       className={`group relative inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full font-semibold transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 ${variants[variant]} ${sizes[size]} ${className}`}
     >
       <span

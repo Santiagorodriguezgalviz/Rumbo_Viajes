@@ -12,16 +12,21 @@ export function buildWhatsAppUrl(mensaje?: string) {
   return mensaje ? `${base}?text=${encodeURIComponent(mensaje)}` : base;
 }
 
-export function whatsappPaqueteUrl(
-  paquete: { nombre: Bilingue; duracion: { dias: number; noches: number } },
-  locale: Locale,
-) {
+/** Página del paquete en el sitio que el visitante tiene abierto. */
+export function urlPaginaPaquete(slug: string, origen: string) {
+  return `${origen.replace(/\/$/, '')}/paquetes/${slug}`;
+}
+
+export function mensajePaquete(paquete: { nombre: Bilingue; slug: string }, locale: Locale, origen: string) {
   const nombre = paquete.nombre[locale];
-  const mensaje =
-    locale === 'en'
-      ? `Hi, I'm interested in this ${nombre} package.`
-      : `Hola, estoy interesado en este paquete a ${nombre}.`;
-  return buildWhatsAppUrl(mensaje);
+  const url = urlPaginaPaquete(paquete.slug, origen);
+  return locale === 'en'
+    ? `Hi, I'm interested in this ${nombre} package.\n\n${url}`
+    : `Hola, estoy interesado en este paquete a ${nombre}.\n\n${url}`;
+}
+
+export function whatsappPaqueteUrl(paquete: { nombre: Bilingue; slug: string }, locale: Locale, origen: string) {
+  return buildWhatsAppUrl(mensajePaquete(paquete, locale, origen));
 }
 
 export function whatsappOtroUrl(locale: Locale) {

@@ -3,10 +3,9 @@
 import { CalendarDays, MapPin, ShieldCheck } from 'lucide-react';
 import { PrecioLabel } from '@/components/site/PrecioLabel';
 import { usePreferencias } from '@/components/site/PreferenciasProvider';
-import { WhatsAppButton } from '@/components/site/WhatsAppButton';
+import { WhatsAppPaqueteButton } from '@/components/paquete/WhatsAppPaqueteButton';
 import { REGION_TEXTO, type Paquete } from '@/data/paquetes';
 import { formatDuracion } from '@/lib/format';
-import { whatsappPaqueteUrl } from '@/lib/whatsapp';
 
 export function BookingCard({ paquete }: { paquete: Paquete }) {
   const { locale, tx } = usePreferencias();
@@ -30,9 +29,9 @@ export function BookingCard({ paquete }: { paquete: Paquete }) {
         </li>
       </ul>
 
-      <WhatsAppButton href={whatsappPaqueteUrl(paquete, locale)} className="mt-8 w-full">
+      <WhatsAppPaqueteButton paquete={paquete} className="mt-8 w-full">
         {tx({ es: 'Quiero este viaje', en: 'I want this trip' })}
-      </WhatsAppButton>
+      </WhatsAppPaqueteButton>
 
       <p className="mt-5 flex items-start gap-2.5 text-xs leading-relaxed text-ink-muted">
         <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-teal-600" aria-hidden="true" />
