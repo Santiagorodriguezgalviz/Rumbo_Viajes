@@ -1,11 +1,11 @@
 import type { Bilingue, Locale } from '@/lib/preferencias';
 import { absoluteUrl, SITE } from '@/lib/site';
 
-/** WhatsApp de la agencia, con indicativo de Colombia. */
-export const WHATSAPP_NUMERO = '573053873453';
+/** WhatsApp de la agencia, con indicativo de Polonia. */
+export const WHATSAPP_NUMERO = '48503644658';
 
 /** Cómo se muestra el número para llamar o escribir. */
-export const TELEFONO_VISIBLE = '305 387 3453';
+export const TELEFONO_VISIBLE = '+48 503 644 658';
 
 export function buildWhatsAppUrl(mensaje?: string) {
   const base = `https://wa.me/${WHATSAPP_NUMERO}`;
@@ -30,8 +30,11 @@ export function whatsappPaqueteUrl(paquete: { nombre: Bilingue; slug: string }, 
 }
 
 export function whatsappOtroUrl(locale: Locale) {
+  const url = absoluteUrl('/');
   const mensaje =
-    locale === 'en' ? `Hi, I'm interested in another package.` : `Hola, estoy interesado en otro paquete.`;
+    locale === 'en'
+      ? `Hi, I'm interested in another package.\n\n${url}`
+      : `Hola, estoy interesado en otro paquete.\n\n${url}`;
   return buildWhatsAppUrl(mensaje);
 }
 

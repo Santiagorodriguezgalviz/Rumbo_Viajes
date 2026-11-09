@@ -56,8 +56,15 @@ export function SiteFooter() {
             href={whatsappGeneralUrl(locale)}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-5 block font-display text-2xl font-semibold tracking-tight text-white transition-colors hover:text-sun-300"
+            className="mt-5 inline-flex items-center gap-3 font-display text-2xl font-semibold tracking-tight text-white transition-colors hover:text-sun-300"
           >
+            <img
+              src="/flags/pl.svg"
+              alt=""
+              width={32}
+              height={22}
+              className="h-5 w-8 rounded-[3px] object-cover shadow-sm ring-1 ring-white/30"
+            />
             {TELEFONO_VISIBLE}
           </a>
           <a

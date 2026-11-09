@@ -1,5 +1,5 @@
 export const SITE = {
-  name: 'Rumbo Viajes',
+  name: 'Safari Mundi',
   url: 'https://viajaconmanuel.vercel.app',
   locale: 'es_CO',
   city: 'Bogotá',

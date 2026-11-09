@@ -45,9 +45,8 @@ export function FinalCta() {
             rel="noopener noreferrer"
             className="mt-6 inline-flex items-center gap-3 text-lg font-semibold text-sun-300 transition-colors hover:text-white"
           >
-            <span>+57</span>
             <img
-              src="/flags/co.svg"
+              src="/flags/pl.svg"
               alt=""
               width={32}
               height={22}

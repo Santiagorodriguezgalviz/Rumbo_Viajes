@@ -1,8 +1,9 @@
 'use client';
 
-import { CalendarDays, MapPin, ShieldCheck } from 'lucide-react';
+import { CalendarDays, MapPin } from 'lucide-react';
 import { PrecioLabel } from '@/components/site/PrecioLabel';
 import { usePreferencias } from '@/components/site/PreferenciasProvider';
+import { ShieldCheck } from 'lucide-react';
 import { WhatsAppPaqueteButton } from '@/components/paquete/WhatsAppPaqueteButton';
 import { REGION_TEXTO, type Paquete } from '@/data/paquetes';
 import { formatDuracion } from '@/lib/format';

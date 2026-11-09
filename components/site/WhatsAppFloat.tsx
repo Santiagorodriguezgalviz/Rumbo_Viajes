@@ -15,7 +15,8 @@ export function WhatsAppFloat() {
       aria-label={etiqueta}
       className="group fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-4 z-50 flex items-center gap-3 sm:bottom-8 sm:right-8"
     >
-      <span className="hidden translate-x-2 rounded-full bg-surface px-4 py-2 text-sm font-semibold text-ink opacity-0 shadow-lg transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 sm:block">
+      <span className="hidden translate-x-2 items-center gap-2 rounded-full bg-surface px-4 py-2 text-sm font-semibold text-ink opacity-0 shadow-lg transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100 sm:inline-flex">
+        <img src="/flags/pl.svg" alt="" width={20} height={14} className="h-3.5 w-5 rounded-[2px] object-cover" />
         {TELEFONO_VISIBLE}
       </span>
       <span className="relative flex h-12 w-12 items-center justify-center rounded-full bg-whatsapp text-navy-900 shadow-xl shadow-black/20 transition-transform duration-300 group-hover:scale-105 sm:h-14 sm:w-14">

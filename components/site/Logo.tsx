@@ -4,7 +4,7 @@ import { Plane } from 'lucide-react';
 export function Logo({ tone = 'dark' }: { tone?: 'dark' | 'light' }) {
   const isLight = tone === 'light';
   return (
-    <Link href="/" className="group flex shrink-0 items-center gap-2.5 whitespace-nowrap" aria-label="Rumbo Viajes, ir al inicio">
+    <Link href="/" className="group flex shrink-0 items-center gap-2.5 whitespace-nowrap" aria-label="Safari Mundi, ir al inicio">
       <span
         className={`flex h-10 w-10 items-center justify-center rounded-full transition-transform duration-500 group-hover:-rotate-12 ${
           isLight ? 'bg-sun-400 text-navy-900' : 'bg-navy-800 text-sun-300'
@@ -17,7 +17,7 @@ export function Logo({ tone = 'dark' }: { tone?: 'dark' | 'light' }) {
           isLight ? 'text-white' : 'text-ink'
         }`}
       >
-        Rumbo <span className={isLight ? 'text-sun-300' : 'text-teal-600'}>Viajes</span>
+        Safari <span className={isLight ? 'text-sun-300' : 'text-teal-600'}>Mundi</span>
       </span>
     </Link>
   );
